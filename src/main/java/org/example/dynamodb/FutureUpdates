@@ -1,0 +1,54 @@
+///////////////////////Sinle leader Data replication using DynamoDB tables/////////////////
+////////////////////////Create the Leader Table with Streams Enabled//////////////////////////////////////////////////////
+CreateTableRequest request = CreateTableRequest.builder()
+    .tableName("LeaderTable")
+    .attributeDefinitions(
+        AttributeDefinition.builder().attributeName("id").attributeType(ScalarAttributeType.S).build()
+    )
+    .keySchema(KeySchemaElement.builder().attributeName("id").keyType(KeyType.HASH).build())
+    .streamSpecification(
+        StreamSpecification.builder()
+            .streamEnabled(true)
+            .streamViewType(StreamViewType.NEW_AND_OLD_IMAGES) // Or NEW_IMAGE
+            .build()
+    )
+    .billingMode(BillingMode.PAY_PER_REQUEST)
+    .build();
+
+dynamoDbClient.createTable(request);
+
+
+//////////////////////Create Two Replica Tables(Read-only from app perspective)/////////////////////////////////////////////
+CreateTableRequest replicaRequest = request.toBuilder().tableName("ReplicaTable1").build();
+dynamoDbClient.createTable(replicaRequest);
+
+/////////////////////Setup a dynamoDB Stream Consumer (Lambda or App)//////////////////////////////////////////////////////
+public class Replicator implements RequestHandler<DynamodbEvent, Void> {
+    private final DynamoDbClient replicaClient = DynamoDbClient.create();
+
+        @Override
+        public Void handleRequest(DynamodbEvent event, Context context) {
+            for (DynamodbEvent.DynamodbStreamRecord record : event.getRecords()) {
+                Map<String, AttributeValue> newImage = record.getDynamodb().getNewImage();
+
+                if ("INSERT".equals(record.getEventName()) || "MODIFY".equals(record.getEventName())) {
+                    PutItemRequest putRequest = PutItemRequest.builder()
+                        .tableName("ReplicaTable1")
+                        .item(newImage)
+                        .build();
+                    replicaClient.putItem(putRequest);
+
+                    // Repeat for ReplicaTable2
+                } else if ("REMOVE".equals(record.getEventName())) {
+                    DeleteItemRequest deleteReq = DeleteItemRequest.builder()
+                        .tableName("ReplicaTable1")
+                        .key(record.getDynamodb().getKeys())
+                        .build();
+                    replicaClient.deleteItem(deleteReq);
+
+                    // Repeat for ReplicaTable2
+                }
+            }
+        return null;
+    }
+}

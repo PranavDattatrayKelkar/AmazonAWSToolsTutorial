@@ -1,0 +1,93 @@
+import java.util.*;
+
+public class DFS {
+    //      1
+    //   2     5
+    // 3  4   6  7
+    public static class TreeNode {
+         // memeber variables, constructor, API's
+         int val;
+         TreeNode left;
+         TreeNode right;
+         public TreeNode(int val) {
+             this.val = val;
+         }
+         public TreeNode(int val, TreeNode left, TreeNode right) {
+             this.val = val;
+             this.left = left;
+             this.right = right;
+         }
+    }
+
+    // inorder, preorder, postorder
+    public static void bfs(TreeNode root) {
+         Queue<TreeNode> queue = new LinkedList<>();
+         queue.add(root);
+         int order = 0;
+         List<Integer> finalList = new ArrayList<>();
+         while(!queue.isEmpty()) {
+              for(int i = 0; i < queue.size();i++) {
+                  TreeNode curr = queue.poll();
+                  finalList.add(curr.val);
+                  if(curr.left != null) queue.add(curr.left);
+                  if(curr.right != null) queue.add(curr.right);
+              }
+         }
+         System.out.println(finalList);
+    }
+
+    public static void dfs(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        int order = 0;
+        while(!stack.isEmpty()) {
+            TreeNode curr = stack.pop();
+            order++;
+            System.out.println("Order " + order + " : " + curr.val);
+            if(curr.left != null) stack.push(curr.right);
+            if(curr.right != null) stack.push(curr.left);
+        }
+    }
+
+    // inOrder
+    public static void recurInDfs(TreeNode root) {
+        if(root == null) return;
+        if(root.left != null) recurInDfs(root.left);
+        System.out.println(root.val);
+        if(root.right != null) recurInDfs(root.right);
+    }
+
+    // preOrder
+    public static void recurPreDfs(TreeNode root) {
+        if(root == null) return;
+        System.out.println(root.val);
+        if(root.left != null) recurPreDfs(root.left);
+        if(root.right != null) recurPreDfs(root.right);
+    }
+
+    // postOrder
+    public static void recurPostDfs(TreeNode root) {
+        if(root == null) return;
+        if(root.left != null) recurPostDfs(root.left);
+        if(root.right != null) recurPostDfs(root.right);
+        System.out.println(root.val);
+    }
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        TreeNode left1 = new TreeNode(2);
+        TreeNode right1 = new TreeNode(5);
+        root.left = left1;
+        root.right = right1;
+        TreeNode left2 = new TreeNode(3);
+        TreeNode right2 = new TreeNode(4);
+        TreeNode left5 = new TreeNode(6);
+        TreeNode right5 = new TreeNode(7);
+        left1.left = left2;
+        left1.right = right2;
+        right1.left = left5;
+        right1.right = right5;
+        dfs(root);
+        //bfs(root);
+    }
+}
