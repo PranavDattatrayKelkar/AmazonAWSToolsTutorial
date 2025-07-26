@@ -15,6 +15,7 @@ public class CreateDynamoDBTable {
      * creates dynamoDB table with a single attribute ID which also is the primary
      * index for the DDB table. This implementation does not consider secondary
      * indexes.
+     *
      */
     public void createDDBTable() {
         try {
@@ -49,6 +50,7 @@ public class CreateDynamoDBTable {
     /**
      * This API creates DynamoDB tables with change logs enabled by using
      * the flag streamEnabled in the builder.
+     *
      */
     public void createDDBTableWithChangeLogs() {
         CreateTableRequest request = CreateTableRequest.builder()

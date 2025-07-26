@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class EncodeDecodeDataInterfaceTest {
 
+
     @Test
     void testAESImplementsInterface() {
         EncodeDecodeDataWithAES aesImpl = new EncodeDecodeDataWithAES();

@@ -7,7 +7,8 @@ public class CacheChecker extends StorageOrchestrator {
      * Checks if the key is present in the cache. If not it sends the request to the next
      * handler in the chain which is the DynamoDB database.
      *
-     * @param request
+     *
+     * @param request the request object containing the key, value, and cache client
      */
     @Override
     public void handle(OrchestratorUtility.Request request) {

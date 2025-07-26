@@ -15,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class StorageOrchestratorTest {
 
+
     private Cache<String, String> cache;
     private DynamoDbClient dynamoDbClient;
     private CacheChecker cacheChecker;

@@ -6,7 +6,8 @@ public class DynamoDBChecker extends StorageOrchestrator {
     /**
      * Checks if the key is present in the DynamoDB database
      *
-     * @param request
+     *
+     * @param request the request object containing the key, value, and database client
      */
     @Override
     public void handle(OrchestratorUtility.Request request) {

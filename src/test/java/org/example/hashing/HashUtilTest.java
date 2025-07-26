@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HashUtilTest {
 
+
     @Test
     void testHashLongReturnsLong() {
         String input = "test";

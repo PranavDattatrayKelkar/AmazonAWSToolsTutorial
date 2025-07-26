@@ -17,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 class SingleLeaderDataReplicationTest {
 
+
     private DynamoDbClient replicaClient;
     private SingleLeaderDataReplication singleLeaderDataReplication;
 

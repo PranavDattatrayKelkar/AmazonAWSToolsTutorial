@@ -25,6 +25,15 @@ public class SingleLeaderDataReplication {
 
     }
 
+    /**
+     * Future updates
+     *
+     * @param event
+     * @param context
+     * @param replicaClient
+     * @param replicaTableName
+     * @return
+     */
     public Void handleRequest(DynamodbEvent event, Context context, DynamoDbClient replicaClient,
                               String replicaTableName) {
         for (DynamodbEvent.DynamodbStreamRecord record : event.getRecords()) {

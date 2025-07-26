@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class GetDataFromDynamoDBTableTest {
 
+
     private DynamoDbClient dynamoDbClient;
 
     @BeforeEach

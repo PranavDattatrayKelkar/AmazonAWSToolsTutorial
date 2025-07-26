@@ -7,6 +7,7 @@ import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
  * Helper class for testing the StorageOrchestrator package
  */
 public class TestHelper {
+
     
     /**
      * Creates a Request object for testing

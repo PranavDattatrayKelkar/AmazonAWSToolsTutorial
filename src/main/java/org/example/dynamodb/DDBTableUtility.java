@@ -6,6 +6,9 @@ import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 
+/**
+ * Utility class for DynamoDB tables
+ */
 public class DDBTableUtility {
     public static String tableName = "pranav-table";
     public static AwsCredentialsProvider credentialsProvider = StaticCredentialsProvider.create(

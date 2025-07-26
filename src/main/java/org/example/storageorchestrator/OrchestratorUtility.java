@@ -3,13 +3,12 @@ package org.example.storageorchestrator;
 import com.github.benmanes.caffeine.cache.Cache;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 
+/**
+ * Request wrapper used as an Entity for validations
+ * on various storage systems.
+ *
+ */
 public class OrchestratorUtility {
-
-
-    /**
-     * Reques wrapper used as an Entity for validations
-     * on various storage systems.
-     */
     class Request {
         String key;
         String value;

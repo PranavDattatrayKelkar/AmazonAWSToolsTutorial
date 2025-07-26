@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class EncryptionUtilityTest {
 
+
     @Test
     void testGenerateKeyAESReturnsValidKey() throws Exception {
         SecretKey key = EncryptionUtility.generateKeyAES();

@@ -17,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class AddDataToDynamoDBTableTest {
 
+
     private DynamoDbClient dynamoDbClient;
     private AddDataToDynamoDBTable addDataToDynamoDBTable;
     private final String tableName = "test-table";

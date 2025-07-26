@@ -6,6 +6,7 @@ public class HashUtil {
         /**
          * This API is used to return 64-bit MurmurHash3 for a String key
          *
+         *
          * @param key input key to create hash for
          * @return long hashed key
          */

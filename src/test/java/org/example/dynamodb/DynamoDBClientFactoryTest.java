@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class DynamoDBClientFactoryTest {
 
+
     @Test
     void testCreateClientWithCredentialsAndRegion() {
         StaticCredentialsProvider credProvider = StaticCredentialsProvider.create(

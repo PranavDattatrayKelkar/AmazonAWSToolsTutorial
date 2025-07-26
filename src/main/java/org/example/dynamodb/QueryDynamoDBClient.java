@@ -16,10 +16,11 @@ public class QueryDynamoDBClient {
     /**
      * API to query DynamoDB table using a queryIndex.
      *
-     * @param tableName
-     * @param index
-     * @param keyCondition
-     * @param attributeName
+     *
+     * @param tableName Name of the table to query
+     * @param index Name of the index to query
+     * @param keyCondition Name of the key to query
+     * @param attributeName Name of the attribute to query
      * @return response for the query
      */
     public QueryResponse queryDynamoDBTable(String tableName, String index, String keyCondition,

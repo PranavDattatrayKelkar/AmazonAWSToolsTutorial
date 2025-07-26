@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class encryptionUsingMD5HashingTest {
 
+
     @Test
     void testHashMD5ReturnsPage() throws NoSuchAlgorithmException {
         String input = "test";

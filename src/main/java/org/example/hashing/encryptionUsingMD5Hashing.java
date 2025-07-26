@@ -13,6 +13,8 @@ public class encryptionUsingMD5Hashing {
      *  1. highly non‑uniform (similar length keys map together)
      *  2. all keys remap when
      *  3. can’t weight by server capacity
+     *
+     *
      * @param input String to make the hash for
      * @return Page object with the encrypted data and server selection
      * @throws NoSuchAlgorithmException
@@ -30,6 +32,7 @@ public class encryptionUsingMD5Hashing {
      * Better distribution than length but still remaps almost everything when
      * server count changes.
      *
+     *
      * @param input String to make the hash for
      * @param numOfServers Number of servers to distribute the data to
      * @return Page object with the encrypted data and server selection
@@ -45,24 +48,5 @@ public class encryptionUsingMD5Hashing {
                 (digest[3] & 0xff);
         h = h & 0x7fffffff;
         return new Page(0, digest, numOfServers);
-    }
-
-    public static void main(String[] args) throws NoSuchAlgorithmException {
-        String input = "pr";
-        int[] data = new int[5];
-        int numOfServers = 4;
-        Page encryptedPage = hashMD5to64BitAndModByServerCount(input, 4);
-        Arrays.fill(data, -1);
-        int index = input.length() % 4;
-
-        System.out.println(encryptedPage.encryptedData.length);
-        System.out.println(encryptedPage.serverSelection);
-        if(input.length() % 4 == encryptedPage.serverSelection) {
-            System.out.println("AssertTrue");
-        } else
-        {
-            System.out.println("AssertFalse");
-        }
-
     }
 }

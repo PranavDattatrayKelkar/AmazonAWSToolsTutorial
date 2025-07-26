@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class CaffineCacheTest {
+
     static Cache<String, String> cache;
 
     @BeforeAll

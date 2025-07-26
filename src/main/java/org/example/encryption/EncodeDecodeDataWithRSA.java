@@ -7,6 +7,7 @@ public class EncodeDecodeDataWithRSA implements EncodeDecodeDataInterface{
      * API uses RSA encryption algorithm for encrypting all the read queries
      * with a public key
      *
+     *
      * @param inputStr input String for encryption
      * @return encrypted UTF-8 byte array.
      */
@@ -20,6 +21,7 @@ public class EncodeDecodeDataWithRSA implements EncodeDecodeDataInterface{
     /**
      * API uses RSA decryption algorithm for decrypting the input byte array
      * by using the private key of the crypto encryption algorithm
+     *
      *
      * @param item byte array that was encrypted using RSA encryption algorithm
      * @return decrypted key that was previously encoded using RSA encryption algorithm

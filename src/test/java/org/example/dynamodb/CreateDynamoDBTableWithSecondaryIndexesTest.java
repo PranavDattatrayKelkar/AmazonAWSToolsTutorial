@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class CreateDynamoDBTableWithSecondaryIndexesTest {
 
+
     private DynamoDbClient dynamoDbClient;
     private CreateDynamoDBTableWithSecondaryIndexes createTableWithIndexes;
     private final String tableName = "test-table";

@@ -21,6 +21,7 @@ public class DownloadFileFromS3 {
      * Currently this implementation is dedicated to fetching text
      * files but it can be extended to any type of files.
      *
+     *
      * @param bucketName S3 bucket name
      * @param prefix S3 prefix
      * @param localDir local directory to save the files

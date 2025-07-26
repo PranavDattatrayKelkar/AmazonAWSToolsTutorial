@@ -11,8 +11,9 @@ public class DynamoDBClientFactory {
     /**
      * Factory to create the DynamoDB client's static instance
      *
-     * @param credProvider
-     * @param region
+     *
+     * @param credProvider AWS credentials used to create the DynamoDB client
+     * @param region AWS region to create the instance of DynamoDB client in
      * @return Static DynamoDb client instance
      */
     public static DynamoDbClient createClient(AwsCredentialsProvider credProvider, Region region) {
@@ -25,9 +26,9 @@ public class DynamoDBClientFactory {
     /**
      * Factory to create a DynamoDB client's static instance
      *
-     * @param credProvider
-     * @param region
-     * @param endpoint
+     * @param credProvider AWS credentials used to create the DynamoDB client
+     * @param region AWS region to create the instance of DynamoDB client in
+     * @param endpoint DynamoDB endpoint to connect to
      * @return Static DynamoDB client instance
      */
     public static DynamoDbClient createClient(AwsCredentialsProvider credProvider, Region region, URI endpoint) {

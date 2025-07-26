@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ConsistentHashTest {
 
+
     private ConsistentHash<String> consistentHash;
     private List<String> nodes;
 

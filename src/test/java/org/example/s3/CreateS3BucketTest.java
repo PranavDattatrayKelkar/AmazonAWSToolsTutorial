@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class CreateS3BucketTest {
 
+
     private CreateS3Bucket createS3Bucket;
     private StaticCredentialsProvider credentialsProvider;
 

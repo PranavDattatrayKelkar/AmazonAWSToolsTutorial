@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class encryptionUsingSHA256HashingTest {
 
+
     @Test
     void testHashSHA256ReturnsPage() throws NoSuchAlgorithmException {
         String input = "test";

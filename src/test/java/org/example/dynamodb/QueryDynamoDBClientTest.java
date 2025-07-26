@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class QueryDynamoDBClientTest {
 
+
     private DynamoDbClient dynamoDbClient;
     private QueryDynamoDBClient queryDynamoDBClient;
 
