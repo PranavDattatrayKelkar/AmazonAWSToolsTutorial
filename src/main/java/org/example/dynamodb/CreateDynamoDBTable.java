@@ -6,6 +6,7 @@ import software.amazon.awssdk.services.dynamodb.model.*;
 public class CreateDynamoDBTable {
     private static String tableName;
     private static DynamoDbClient dynamoDbClient;
+    
     public CreateDynamoDBTable(String tableName, DynamoDbClient dbClient) {
         this.tableName = tableName;
         this.dynamoDbClient = dbClient;
@@ -15,7 +16,6 @@ public class CreateDynamoDBTable {
      * creates dynamoDB table with a single attribute ID which also is the primary
      * index for the DDB table. This implementation does not consider secondary
      * indexes.
-     *
      */
     public void createDDBTable() {
         try {
@@ -35,8 +35,8 @@ public class CreateDynamoDBTable {
                     )
                     .provisionedThroughput(
                             ProvisionedThroughput.builder()
-                                    .readCapacityUnits(5L) // Setting up RCU
-                                    .writeCapacityUnits(5L) // Setting up WCU
+                                    .readCapacityUnits(5L)
+                                    .writeCapacityUnits(5L)
                                     .build()
                     )
                     .build();
@@ -47,11 +47,6 @@ public class CreateDynamoDBTable {
         System.out.println("Successfully createdTable " + tableName);
     }
 
-    /**
-     * This API creates DynamoDB tables with change logs enabled by using
-     * the flag streamEnabled in the builder.
-     *
-     */
     public void createDDBTableWithChangeLogs() {
         CreateTableRequest request = CreateTableRequest.builder()
                 .tableName("LeaderTable")
@@ -62,7 +57,7 @@ public class CreateDynamoDBTable {
                 .streamSpecification(
                         StreamSpecification.builder()
                                 .streamEnabled(true)
-                                .streamViewType(StreamViewType.NEW_AND_OLD_IMAGES) // Or NEW_IMAGE
+                                .streamViewType(StreamViewType.NEW_AND_OLD_IMAGES)
                                 .build()
                 )
                 .billingMode(BillingMode.PAY_PER_REQUEST)

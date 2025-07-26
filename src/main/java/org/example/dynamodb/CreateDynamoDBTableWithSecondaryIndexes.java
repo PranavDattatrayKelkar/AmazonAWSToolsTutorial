@@ -14,9 +14,8 @@ public class CreateDynamoDBTableWithSecondaryIndexes {
     /**
      * Creates DynamoDB tables with both primary and secondary indexes.
      *
-     *
-     * @param primaryIndexName This is the primary index for our DynamoDB table
-     * @param secondaryIndexName This is an added secondary index for our DynamoDB table to faster query data
+     * @param primaryIndexName
+     * @param secondaryIndexName
      */
     public void createDynamoDBWithSecondaryIndexes(String primaryIndexName, String secondaryIndexName) {
         try {

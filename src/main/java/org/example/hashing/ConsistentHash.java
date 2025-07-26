@@ -15,7 +15,6 @@ public class ConsistentHash<T> {
      * 1. Virtual nodes per server (~100–200 typical; tune)
      * 2. Weights by adding proportionally more virtual nodes for bigger servers.
      * 3. Replication: walk further around the ring to pick R distinct servers.
-     *
      */
     private final SortedMap<Long,T> ring = new TreeMap<>();
     private final int vnodes;

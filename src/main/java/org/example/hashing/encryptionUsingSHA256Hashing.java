@@ -11,9 +11,8 @@ public class encryptionUsingSHA256Hashing {
     /**
      * This API hashes the input string using SHA256 algorithm
      *
-     *
-     * @param input String to make the hash for
-     * @return Page object with the hashed data and the server selection
+     * @param input
+     * @return
      * @throws NoSuchAlgorithmException
      */
     public static EncryptionUtility.Page hashSHA256(String input) throws NoSuchAlgorithmException {

@@ -18,8 +18,8 @@ public class AddDataToDynamoDBTable {
     /**
      * Adds a String, key-value pair to the DDB table.
      *
-     * @param keyName Key to add to the bucket
-     * @param valueName Value to add to the key
+     * @param keyName
+     * @param valueName
      */
     public void addDataAsStringToDynamoDBTable(String keyName, String valueName) {
         Map<String, AttributeValue> insertMap = new HashMap<>() {{
@@ -35,8 +35,7 @@ public class AddDataToDynamoDBTable {
     /**
      * Adds a map request as an entry in a DDB table.
      *
-     *
-     * @param requestMap requests data to add to DynamoDB table
+     * @param requestMap
      */
     public void addDataAsMapToDynamoDBTable(Map<String, AttributeValue> requestMap) {
         PutItemRequest itemRequest = PutItemRequest.builder()

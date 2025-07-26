@@ -25,7 +25,6 @@ public class EncryptionUtility {
      * API that is used to generate crypto key using AES crypto
      * encryption algorithm.
      *
-     *
      * @return Encrypted secret key.
      * @throws Exception
      */
@@ -38,7 +37,6 @@ public class EncryptionUtility {
     /**
      * API that is used to generate crypto key using RSA crypto
      * encryption algorithm.
-     *
      *
      * @return Encrypted public and private key pair to be used further.
      * @throws Exception

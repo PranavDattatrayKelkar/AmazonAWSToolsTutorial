@@ -11,10 +11,9 @@ public class UploadFileToS3 {
     /**
      * Helper function to upload data to an S3 bucket.
      *
-     *
-     * @param bucketName S3 bucket name
-     * @param keyName    S3 key name to add to the bucket
-     * @param filePath   local file path to upload
+     * @param bucketName
+     * @param keyName
+     * @param filePath
      */
     public void uploadFile(String bucketName, String keyName, String filePath) {
         S3Client s3 = S3Client.builder()

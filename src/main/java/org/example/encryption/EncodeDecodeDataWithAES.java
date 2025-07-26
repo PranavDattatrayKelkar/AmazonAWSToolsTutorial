@@ -2,13 +2,12 @@ package org.example.encryption;
 
 import javax.crypto.Cipher;
 
-public class EncodeDecodeDataWithAES implements EncodeDecodeDataInterface{
+public class EncodeDecodeDataWithAES implements EncodeDecodeDataInterface {
     /**
      * API uses AES encryption algorithm for encrypting all the input read queries
      *
-     *
-     * @param inputStr input String for encryption
-     * @return encrypted byte array
+     * @param inputStr
+     * @return
      */
     @Override
     public byte[] encrypt(String inputStr) throws Exception {
@@ -21,8 +20,7 @@ public class EncodeDecodeDataWithAES implements EncodeDecodeDataInterface{
      * API uses AES decryption algorithm for decrypting a UTF-8 encoded
      * byte array.
      *
-     *
-     * @param item byte array that was encrypted using AES encryption algorithm
+     * @param item
      * @return decrypted string that was previously encoded using AES encryption algorithm
      */
     @Override
